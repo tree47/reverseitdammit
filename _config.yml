@@ -16,7 +16,7 @@
 title: Reverse It Dammit!
 email: reverseitdammit@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Malware analysis blog. Discussing all thing malware.
+  Malware analysis blog. Discussing all things malware.
 baseurl: "/reverseitdammit" # the subpath of your site, e.g. /blog
 url: "https://tree47.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kmh352
