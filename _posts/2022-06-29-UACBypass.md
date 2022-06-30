@@ -191,3 +191,14 @@ de2477f5fe8ca28785e225b209f41ce0678c9f5ba0e6f0fcc4cbb520d53151b5
     hxxp://source1.kapetownlink[.]com/installer.exe
     hxxps://setup.maskvpn.cc/g[.]asp?id=151
 ```
+
+#### References:
+
+* https://attack.mitre.org/techniques/T1218/005/
+* https://attack.mitre.org/techniques/T1548/002/
+* https://docs.microsoft.com/en-us/windows/security/identity-protection/user-account-control/user-account-control-group-policy-and-registry-key-settings
+* https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/341747f5-6b5d-4d30-85fc-fa1cc04038d4
+* https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/
+* https://www.rapid7.com/db/modules/exploit/windows/local/bypassuac_sluihijack/
+* https://www.rapid7.com/db/modules/exploit/windows/local/bypassuac_silentcleanup/
+* https://pentestlab.blog/2017/06/07/uac-bypass-fodhelper/
