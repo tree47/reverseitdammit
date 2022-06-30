@@ -8,7 +8,7 @@ categories: UACbypass
 
 ## Introduction
 
-In this post, I highlight old UAC bypasss techniques that are still in use. Although the bypass techniques implements in the analyzed sample are older and known, attempts are still being made to exploit them. As a result, defenders should be made aware of these on-going threats. 
+In this post, I highlight old UAC bypass techniques that are still in use. Although the bypass techniques implements in the analyzed sample are older and known, attempts are still being made to exploit them. As a result, defenders should be made aware of these on-going threats. 
 
 I ran across this simple .NET downloader I'm naming *Adan Downloader* based on it's project path. The malware implements UAC bypass techniques in order to execute a Powershell download command proxied through mshta.exe.
 
