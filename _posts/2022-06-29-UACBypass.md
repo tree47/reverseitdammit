@@ -12,7 +12,7 @@ In this post, I highlight old UAC bypasss techniques that are still in use. Alth
 
 I ran across this simple .NET downloader I'm naming *Adan Downloader* based on it's project path. The malware implements UAC bypass techniques in order to execute a Powershell download command proxied through mshta.exe (https://attack.mitre.org/techniques/T1218/005/).
 
-The UAC bypass techniques implemented are (https://attack.mitre.org/techniques/T1548/002/):
+The UAC bypass techniques implemented are https://attack.mitre.org/techniques/T1548/002/:
 * UAC Bypass via Event Viewer
 * UAC Bypass via Slui
 * UAC Bypass via SilentCleanup Scheduled Task
@@ -53,7 +53,7 @@ The UAC bypass techniques implemented are (https://attack.mitre.org/techniques/T
         <tr>
             <td>VT</td>
             <td> 
-                <a href="https://www.virustotal.com/gui/file/72c9919f885dd2a6f4491e5bc227224d6a68e09af553ad6cb21617fe2bc56534/relations)">72C9919F885DD2A6F4491E5BC227224D6A68E09AF553AD6CB21617FE2BC56534</a>
+                <a href="https://www.virustotal.com/gui/file/72c9919f885dd2a6f4491e5bc227224d6a68e09af553ad6cb21617fe2bc56534">72C9919F885DD2A6F4491E5BC227224D6A68E09AF553AD6CB21617FE2BC56534</a>
             </td>
         </tr>
     </tbody>
