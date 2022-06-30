@@ -4,6 +4,7 @@ title: "UAC Bypass"
 date: 2022-06-29 01:20:00 -0000
 categories: UACbypass
 ---
+![Entry Point]({{site.url}}/{{site.baseurl}}/images/clouds.jpg)
 
 ## Introduction
 
@@ -67,7 +68,10 @@ Creates a payload objects that contains the URLS and command line arguments for 
 hxxp://source1.kapetownlink[.]com/installer.exe - Args: /qn CAMPAIGN="1640"
 hxxps://setup.maskvpn[.]cc/g.asp?id=151 - Args: /silent /subid=603
 ```
-    
+
+![Entry Point]({{site.url}}/{{site.baseurl}}/images/main.png)
+*Main Function*
+
 For each payload URL, it constructs the following command to download additional files from the download URL to **%ProgramData%\<random_string>.exe**.
 
 <b>mshta command</b>
@@ -84,6 +88,10 @@ The command proxies Powershell execution through the mshta utility. This utility
 
 After constructing the command, the downloader executes a function named *UACBypass.AutoBypass()*. The function starts by obtaining the Windows product name. Depending on the name, the downloader utilizes old techniques to bypass UAC security measures.
 
+![UACAuto.Bypass]({{site.url}}/{{site.baseurl}}/images/uac_autobypass.png)
+
+*AutoBypass Function*
+
 ### UAC Bypass Techniques
 
 #### Windows 7: UAC Bypass via Event Viewer
@@ -96,6 +104,9 @@ The technique works in part because of the relationship between the HKEY_CLASSES
  
 When eventvwr.exe is started, it reads `HKCR\mscfile\shell\open\command` to launce mmc.exe, however, since the HKCR key has been hijacked via the HKCU key, the mshta command is executed.
 
+![UACAuto.Bypass]({{site.url}}/{{site.baseurl}}/images/eventvwr.png)
+
+
 #### Windows 8: UAC Bypass via SLUI
 
 If the product name starts with "Windows 8", UAC bypass is attempted by hijacking the `HKCR\Software\Classes\exefile\shell\open\command` registry key. 
@@ -103,6 +114,9 @@ If the product name starts with "Windows 8", UAC bypass is attempted by hijackin
 The key `HKCU\Software\Classes\exefile\shell\open\command\` is created and the command is set to the mshta command. As explained previously, a entry is also created in the corresponding HKCR `\Software\Classes\exefile\shell\open\command` key. An additional value DelegateExecute is also created but the value is empty.
 
 Slui.exe, an auto-elevated binary, is then executed with elevated privileges and executes the mshta command. 
+
+![]({{site.url}}/{{site.baseurl}}/images/slui_func.png)
+
 
 #### Other OS: UAC Bypass via SilentCleanup Scheduled Task
 
@@ -118,6 +132,9 @@ If the key is set to 2, the downloader creates the key `HKCU\Environment\windir`
 
 The user's environment variables are stored in the `HKCU\Environment\` registry key. The malware adds the mshta command as the environment variable **windir**. As a result, when the *SilentCleanup* task is executed, the mshta command is executed.
 
+![]({{site.url}}/{{site.baseurl}}/images/silentcleanup.png)
+
+
 #### UAC Bypass via Fodhelper
 
 The final UAC bypass technique implemented by the downloader involves *fodhelper*. *Fodhelper.exe* is used by Windows to manage optional features. During execution, it looks for the registry keys:
@@ -126,6 +143,8 @@ The final UAC bypass technique implemented by the downloader involves *fodhelper
 The downloader creates the key `HKCU\Software\Classes\ms-settings\shell\open\command` and sets the value to the mshta command. As with the previous command, DelegateExecute is created but the value is empty.
 
 *Fodhelper.exe* is then executed.
+
+![]({{site.url}}/{{site.baseurl}}/images/fodhelper.png)
 
 #### Cleanup Activity
 
