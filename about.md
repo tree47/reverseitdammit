@@ -1,7 +1,18 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about/
 ---
 
-I have been reversing for over 11 years now. During that time, I have analyzed a variety of file types, written parsers to extract configuration data from malware and developed YARA signatures to identify, categorize samples and mentored those new to malware analysis. Even though I have been doing this for some time, I am still learning! Which is one of the most rewarding aspects of RE!  
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
+
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
+
+
+[jekyll-organization]: https://github.com/jekyll
