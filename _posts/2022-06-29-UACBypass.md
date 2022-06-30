@@ -4,7 +4,7 @@ title: "UAC Bypass"
 date: 2022-06-29 01:20:00 -0000
 categories: UACbypass
 ---
-![Entry Point]({{site.url}}/{{site.baseurl}}/images/clouds.jpg)
+![Entry Point]({{site.url}}/{{site.baseurl}}/images/lock.jpg)
 
 ## Introduction
 
