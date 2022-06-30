@@ -10,9 +10,9 @@ categories: UACbypass
 
 In this post, I highlight old UAC bypasss techniques that are still in use. Although the bypass techniques implements in the analyzed sample are older and known, attempts are still being made to exploit them. As a result, defenders should be made aware of these on-going threats. 
 
-I ran across this simple .NET downloader I'm naming *Adan Downloader* based on it's project path. The malware implements UAC bypass techniques in order to execute a Powershell download command proxied through mshta.exe (https://attack.mitre.org/techniques/T1218/005/).
+I ran across this simple .NET downloader I'm naming *Adan Downloader* based on it's project path. The malware implements UAC bypass techniques in order to execute a Powershell download command proxied through mshta.exe.
 
-The UAC bypass techniques implemented are https://attack.mitre.org/techniques/T1548/002/:
+The UAC bypass techniques implemented are:
 * UAC Bypass via Event Viewer
 * UAC Bypass via Slui
 * UAC Bypass via SilentCleanup Scheduled Task
