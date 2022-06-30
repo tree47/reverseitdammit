@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "UAC Bypass"
+title: "UAC Bypass Techniques"
 date: 2022-06-29 01:20:00 -0000
 categories: UACbypass
 ---
